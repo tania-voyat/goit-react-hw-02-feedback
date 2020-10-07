@@ -2,20 +2,28 @@ import React from "react";
 import styles from "./FeedbackOptions.module.css";
 import PropTypes from "prop-types";
 
-function FeedbackOptions({ onGoodFeedback, onNeutralFeedback, onBadFeedback }) {
+function FeedbackOptions({ onLeaveFeedback }) {
   return (
     <div className={styles.feedback}>
-      <button type="button" className={styles.button} onClick={onGoodFeedback}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={() => onLeaveFeedback("good")}
+      >
         Good
       </button>
       <button
         type="button"
         className={styles.button}
-        onClick={onNeutralFeedback}
+        onClick={() => onLeaveFeedback("neutral")}
       >
         Neutral
       </button>
-      <button type="button" className={styles.button} onClick={onBadFeedback}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={() => onLeaveFeedback("bad")}
+      >
         Bad
       </button>
     </div>
